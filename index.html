@@ -5,24 +5,40 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>SMCDC Join Form — Print Ready</title>
 <style>
-select{width:100%;padding:10px;border:1px solid #ccc;border-radius:6px;font-size:15px;background:#f9fbff;transition:0.2s;}
-select:hover{border-color:#1f6feb;background:#eef4ff;}
-select:focus{outline:none;border-color:#1f6feb;box-shadow:0 0 5px rgba(31,111,235,0.5);}
+/* General Page */
 body {margin:0;font-family:Arial, sans-serif;background:#f2f4f8;display:flex;justify-content:center;padding:20px;}
-.page-a4 {background:#fff;width:210mm;min-height:297mm;padding:20mm;box-shadow:0 0 15px rgba(0,0,0,0.1);} 
+.page-a4 {background:#fff;width:210mm;min-height:297mm;padding:20mm;box-shadow:0 0 15px rgba(0,0,0,0.1);}
 .header-container {display:flex; align-items:center; margin-bottom:20px;}
 .logo {width:100px; height:auto; margin-right:20px;}
 .header-text {display:flex; flex-direction:column; justify-content:center;}
-h1,h3{margin:0;} hr{margin:15px 0;} 
-form{display:grid; grid-template-columns:1fr 1fr; gap:20px;} 
-form label{display:block;margin:12px 0;font-size:16px;} 
-input,textarea,select{width:100%;padding:10px;margin-top:6px;border:1px solid #ccc;border-radius:6px;font-size:15px;} 
-.btn-area{grid-column:1 / -1; text-align:center;margin-top:20px;} 
-button{background:#1f6feb;color:#fff;padding:10px 20px;border:none;border-radius:8px;font-size:16px;cursor:pointer;} 
-button:hover{background:#0d4fc9;} 
+h1,h3{margin:0;} hr{margin:15px 0;}
+form label{display:block;margin:12px 0;font-size:16px;}
+input,textarea,select{width:100%;padding:10px;margin-top:6px;border:1px solid #ccc;border-radius:6px;font-size:15px;}
+.btn-area{text-align:center;margin-top:20px;}
+button{background:#1f6feb;color:#fff;padding:10px 20px;border:none;border-radius:8px;font-size:16px;cursor:pointer;}
+button:hover{background:#0d4fc9;}
 .signature-box{border:1px solid #000; height:50px; margin-top:6px;}
 .profile-photo{border:1px solid #ccc; border-radius:6px; padding:5px;}
-@media print{body{background:none;padding:0;} .page-a4{box-shadow:none;width:210mm;min-height:297mm;padding:15mm;} button{display:none;}}
+
+/* Two-column form for screen */
+@media screen {
+  form{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+  .btn-area{grid-column:1 / -1; text-align:center;}
+}
+
+/* Print styles: rearranged for A4 */
+@media print {
+  body{background:none;padding:0;}
+  .page-a4{box-shadow:none;width:210mm;min-height:297mm;padding:15mm;}
+  button, input, textarea, select {border:none; box-shadow:none;}
+  form{display:block; grid-template-columns:none;}
+  .header-container {flex-direction:row; align-items:center; margin-bottom:15px;}
+  .logo {width:120px; margin-right:20px;}
+  .header-text h1{font-size:22px;}
+  .header-text h3{font-size:16px; margin-top:5px;}
+  label {margin:6px 0; font-size:14px;}
+  .signature-box {height:50px; border-bottom:1px solid #000; margin-top:15px;}
+}
 </style>
 </head>
 <body>
@@ -66,12 +82,8 @@ button:hover{background:#0d4fc9;}
 </form>
 </div>
 <script>
-function printPreview() {
-  window.print();
-}
-function printForm() {
-  window.print();
-}
+function printPreview() { window.print(); }
+function printForm() { window.print(); }
 </script>
 </body>
 </html>
