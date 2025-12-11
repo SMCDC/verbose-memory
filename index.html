@@ -1,89 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>SMCDC Join Form — Print Ready</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SMCH Blood Donation Club</title>
 <style>
-/* General Page */
-body {margin:0;font-family:Arial, sans-serif;background:#f2f4f8;display:flex;justify-content:center;padding:20px;}
-.page-a4 {background:#fff;width:210mm;min-height:297mm;padding:20mm;box-shadow:0 0 15px rgba(0,0,0,0.1);}
-.header-container {display:flex; align-items:center; margin-bottom:20px;}
-.logo {width:100px; height:auto; margin-right:20px;}
-.header-text {display:flex; flex-direction:column; justify-content:center;}
-h1,h3{margin:0;} hr{margin:15px 0;}
-form label{display:block;margin:12px 0;font-size:16px;}
-input,textarea,select{width:100%;padding:10px;margin-top:6px;border:1px solid #ccc;border-radius:6px;font-size:15px;}
-.btn-area{text-align:center;margin-top:20px;}
-button{background:#1f6feb;color:#fff;padding:10px 20px;border:none;border-radius:8px;font-size:16px;cursor:pointer;}
-button:hover{background:#0d4fc9;}
-.signature-box{border:1px solid #000; height:50px; margin-top:6px;}
-.profile-photo{border:1px solid #ccc; border-radius:6px; padding:5px;}
-
-/* Two-column form for screen */
-@media screen {
-  form{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
-  .btn-area{grid-column:1 / -1; text-align:center;}
-}
-
-/* Print styles: rearranged for A4 */
-@media print {
-  body{background:none;padding:0;}
-  .page-a4{box-shadow:none;width:210mm;min-height:297mm;padding:15mm;}
-  button, input, textarea, select {border:none; box-shadow:none;}
-  form{display:block; grid-template-columns:none;}
-  .header-container {flex-direction:row; align-items:center; margin-bottom:15px;}
-  .logo {width:120px; margin-right:20px;}
-  .header-text h1{font-size:22px;}
-  .header-text h3{font-size:16px; margin-top:5px;}
-  label {margin:6px 0; font-size:14px;}
-  .signature-box {height:50px; border-bottom:1px solid #000; margin-top:15px;}
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
+body{line-height:1.6;background:#f8f8f8;color:#333;}
+header{background:#c62828;color:#fff;padding:10px 20px;}
+header nav{display:flex;justify-content:space-between;align-items:center;}
+header nav ul{list-style:none;display:flex;}
+header nav ul li{margin-left:20px;}
+header nav ul li a{color:white;text-decoration:none;}
+.hero{text-align:center;padding:50px 20px;background:#ffebee;}
+.hero h1{font-size:2.5rem;color:#b71c1c;}
+.hero .btn{display:inline-block;margin-top:20px;background:#b71c1c;color:#fff;padding:10px 20px;text-decoration:none;border-radius:5px;}
+footer{text-align:center;padding:10px;background:#c62828;color:#fff;margin-top:20px;}
+iframe{width:100%;max-width:600px;height:500px;border:none;margin:20px auto;display:block;}
+@media(max-width:768px){header nav ul{flex-direction:column;}.hero h1{font-size:2rem;}}
 </style>
 </head>
 <body>
-<div class="page-a4">
-<div class="header-container">
-<img src="logo.jpg" alt="SMCDC Logo" class="logo" />
-<div class="header-text">
-<h1>Southern Medical College Debate Club (SMCDC)</h1>
-<h3>Membership Application Form — Established 2025</h3>
-</div>
-</div>
-<hr />
-<form id="clubForm">
-<label>Profile Photo:<input type="file" class="profile-photo" /></label>
-<label>Full Name:<input type="text" name="name" /></label>
-<label>Email:<input type="email" name="email" /></label>
-<label>Phone:<input type="text" name="phone" /></label>
-<label>Program / Year:<input type="text" name="program" /></label>
-<label>Batch / Session:<select name="batch">
-<option>2020–2021 (16th Batch)</option>
-<option>2021–2022 (17th Batch)</option>
-<option>2022–2023 (18th Batch)</option>
-<option>2023–2024 (19th Batch)</option>
-<option>2024–2025 (20th Batch)</option>
-<option>2025–2026 (21st Batch)</option>
-<option>2026–2027 (22nd Batch)</option>
-<option>2027–2028 (23rd Batch)</option>
-</select></label>
-<label>Roll:<input type="text" name="roll" /></label>
-<label>Student ID Number:<input type="text" name="studentID" /></label>
-<label>Blood Group:<input type="text" name="blood" placeholder="e.g., A+" /></label>
-<label>Present Address:<input type="text" name="address" placeholder="Division, City, Police Station, Post Office" /></label>
-<label>Why do you want to join SMCDC?<textarea name="reason" rows="4"></textarea></label>
-<label>Applicant Signature:<div class="signature-box"></div></label>
-<label>President Signature:<div class="signature-box"></div></label>
-<label>General Secretary (GS) Signature:<div class="signature-box"></div></label>
-<div class="btn-area">
-<button type="button" onclick="printPreview()">Print Preview</button>
-<button type="button" onclick="printForm()">Print Form</button>
-</div>
-</form>
-</div>
-<script>
-function printPreview() { window.print(); }
-function printForm() { window.print(); }
-</script>
+<header>
+<nav>
+<div class="logo">SMCH Blood Donation</div>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="donors.html">Donor List</a></li>
+<li><a href="about.html">About Us</a></li>
+</ul>
+</nav>
+</header>
+
+<section class="hero">
+<h1>Donate Blood, Save Lives</h1>
+<p>Join SMCH Blood Donation Club and be a hero today!</p>
+<a href="donors.html" class="btn">View Donors</a>
+</section>
+
+<section class="form-section">
+<h2 style="text-align:center;margin-top:30px;">Register as Donor</h2>
+<!-- Replace the src URL with your Google Form embed link -->
+<iframe src="https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_ID/viewform?embedded=true"></iframe>
+</section>
+
+<footer>
+<p>&copy; 2025 SMCH Blood Donation Club</p>
+<p>Contact: <a href="mailto:smchblooddonation@gmail.com">smchblooddonation@gmail.com</a></p>
+</footer>
 </body>
 </html>
+
